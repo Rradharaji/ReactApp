@@ -7,9 +7,7 @@ import { useEffect, useState } from "react"; // multipleexports will be there
 const print = () => {
   console.log("print function called");
 }
-if(1===1){
-  <div>testing if</div>
-}
+
 function App() { 
   const item = [
       {
@@ -31,7 +29,7 @@ function App() {
     }
   ];
   const [items, updateData] = useState(item);
-  const [filteredItem, updatefilteredItem] = useState("");
+   const [filteredItem, updatefilteredItem] = useState("");
   const [showNewForm, updateShowForm] = useState(false);
   useEffect(()=>{console.log("App component mounted")},[]); 
   const addItem = (itemData) => {
@@ -84,7 +82,7 @@ function App() {
       <div className="expense-filter">
         <select onChange={(event) => updatefilteredItem(event.target.value)}>
           {items.map((item) => (
-            <option value={item.name}>{item.name}</option>
+            <option key={item.id} value={item.name}>{item.name}</option>
           ))}
         </select>
       </div>
@@ -92,8 +90,8 @@ function App() {
         <Card className="expenses">
           {items
             // .filter((item) => item.name === filteredItem)
-            .map((item) => (
-               <ExpenseItem item={item}></ExpenseItem>
+            .map((item,key) => (
+               <ExpenseItem key ={item.id} item={item}></ExpenseItem>
             ))}
         </Card>
       ) : (
