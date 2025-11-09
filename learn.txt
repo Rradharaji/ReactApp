@@ -1,0 +1,5 @@
+Getting started:
+   install node js and go to a specific path and type npx install
+   npx create-react-app my-app
+cd my-app
+npm start
