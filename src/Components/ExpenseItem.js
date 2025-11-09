@@ -1,6 +1,6 @@
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
-import Card from "./Card";
+// import Card from "./Card";
 import { useState , useEffect} from "react";
 const ExpenseItem = ({item}) => {
   const [title, updateTitle] = useState(item.name);
@@ -17,7 +17,7 @@ const ExpenseItem = ({item}) => {
    // for this reason we have some hooks like useState that tells the react to rerender the component
    // useState is a function which takes default value as param and returns an array of the updatimng value and updating function
    // when this value is updated that value is stored in that updating value and react rerender the component not just jsx it executes all the code
-    updateTitle("newName");
+    updateTitle("newName"+title);
 
   }
   return (

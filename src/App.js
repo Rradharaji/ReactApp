@@ -89,9 +89,9 @@ function App() {
       {items?.length > 0 ? (
         <Card className="expenses">
           {items
-            // .filter((item) => item.name === filteredItem)
-            .map((item,key) => (
-               <ExpenseItem key ={item.id} item={item}></ExpenseItem>
+            .filter((item) => item.name === filteredItem)
+            .map((item) => (
+               <ExpenseItem key={item.id} item={item}></ExpenseItem>
             ))}
         </Card>
       ) : (
